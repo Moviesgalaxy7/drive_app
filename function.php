@@ -35,4 +35,11 @@ function set_title($val = '') {
 	return $val . ' - MG Drive' ?? config("site.title");
 }
 
+function token($k)
+{
+    $file = json_decode(file_get_contents("token.json"), true);
+    $token = $file[$k];
+    return $token;
+}
+
 ?>

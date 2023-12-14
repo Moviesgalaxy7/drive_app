@@ -1,6 +1,10 @@
 <?php
 
-define('FOOTER_CONTENT', 'Hello I\'m an awesome footer!');
+// define('FOOTER_CONTENT', 'Hello I\'m an awesome footer!');
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 
 /*
@@ -8,6 +12,7 @@ define('FOOTER_CONTENT', 'Hello I\'m an awesome footer!');
 */
 function clone_file($id,$token)
 {
+
 	// Init curl
 	$ch = curl_init();
 
@@ -25,6 +30,10 @@ function clone_file($id,$token)
 
 	// RECIVED CURL EXECUTION DATA
 	$result = curl_exec($ch);
+
+	print_r($result);
+	echo "string5";
+	exit();
 
 	if (curl_errno($ch)) {
 		echo 'Error:' . curl_error($ch);
