@@ -6,6 +6,6 @@
 	<title>Home - MG Drive</title>
 </head>
 <body>
-	Homee
+	Home
 </body>
 </html>
