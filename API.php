@@ -19,6 +19,9 @@ function clone_file($id,$token)
 	// Init values
 	$URL = "https://www.googleapis.com/drive/v3/files/" . $id . "/copy?access_token=" . $token;
 
+	// set token into json
+	$data = json_encode($token);                                                                                                                                                                 
+
 	// SET CURL URL AND VALUE
 	curl_setopt($ch, CURLOPT_URL, $URL);
 
@@ -26,14 +29,16 @@ function clone_file($id,$token)
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 	
 	// SET METHOD POST
-	curl_setopt($ch, CURLOPT_POST, 1);
+	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");                                                                     
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array(                                                                          
+        'Content-Type: application/json',                                                                                
+        'Content-Length: ' . strlen($data))                                                                       
+    ); 
 
 	// RECIVED CURL EXECUTION DATA
 	$result = curl_exec($ch);
 
-	print_r($result);
-	echo "string5";
-	exit();
 
 	if (curl_errno($ch)) {
 		echo 'Error:' . curl_error($ch);

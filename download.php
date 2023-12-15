@@ -1,6 +1,6 @@
 <?php 
      
-     ini_set('display_errors', 1);
+ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
@@ -9,9 +9,30 @@ error_reporting(E_ALL);
 
      // Load Page Header
      require 'header.php';
-    
+
+     $token = '';
+
+     session_start();
+
+     if (!isset($_SESSION['access_token'])) {
+
+           // connection to databse
+          $conn = OpenCon();
+
+     
+          $q = 'SELECT token FROM token ORDER BY id DESC LIMIT 1';
+
+          $db_token = $conn->query($q);
+          $token = $db_token->fetch_assoc();
+           
+          // database connection closed
+          CloseCon($conn);
+
+          echo "dd";
+     }
+
      // Set Token
-     $token = "ya29.a0AfB_byDEGMGUAgue4KANpxJwZyqAZ6_AxiAPJA4awTufU5_XBxc9aHaYvAywA1PoZwBhw1bdKd9DO6pgUtwiGNLTnFzdQJ_YzwqSPTh3nYLNNnbiQoErlGOoNDT_IfWmL22UckzB9AHLQ89HrCxZ4CcxwZrj7Rc_19pRaCgYKAaoSARISFQHGX2Mipx_2wjTP9d7nHvQxk_IFDA0171";//token('access_token');
+     // $token = "ya29.a0AfB_byDEGMGUAgue4KANpxJwZyqAZ6_AxiAPJA4awTufU5_XBxc9aHaYvAywA1PoZwBhw1bdKd9DO6pgUtwiGNLTnFzdQJ_YzwqSPTh3nYLNNnbiQoErlGOoNDT_IfWmL22UckzB9AHLQ89HrCxZ4CcxwZrj7Rc_19pRaCgYKAaoSARISFQHGX2Mipx_2wjTP9d7nHvQxk_IFDA0171";//token('access_token');
 
      // connection to databse
      // $conn = OpenCon();

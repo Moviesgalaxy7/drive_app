@@ -5,6 +5,11 @@
 ===================================================================================== */
 
 define('IS_PRODUCTION', ($_SERVER['REMOTE_ADDR'] === '103.250.161.134') ? true : false);
+define('DOCUMENT_ROOT', $_SERVER['DOCUMENT_ROOT'] . '/');
+define('BASE_URL', (empty($_SERVER['HTTPS']) ? 'http' : 'https') . "://$_SERVER[HTTP_HOST]");
+define('PAGES_URL', BASE_URL . '/views/');
+define('CSS_PATH', '../ui/');
+define('JS_PATH', '../ui/');
 
 /*
 =====================================================================================

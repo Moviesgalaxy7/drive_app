@@ -1,0 +1,27 @@
+/* 
+=================================================================================
+								GLOBLE CSS
+=================================================================================
+*/
+body { background-color: #c0c1c240; font-family: 'Rubik', sans-serif; }
+.xxlarge { font-size: xx-large !important; }
+.large { font-size: large !important; }
+
+/* 
+=================================================================================
+								NAVIGATION MANU CSS
+=================================================================================
+*/
+.mgnav { padding: 8px 6px !important; }
+.ui.divided.inverted.horizontal.list>.item, .ui.divided.inverted.list>.item, .ui.divided.inverted.list>.list { border-color: rgba(255, 255, 255, 0.35); }
+
+/* 
+=================================================================================
+								CARDS CSS
+=================================================================================
+*/
+.page-card { width: 100% !important; margin: 5rem auto !important; box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important; border-radius: 1rem !important; }
+.page-card > * .header { padding: 10px !important; text-align: center; }
+.page-card > * .description { padding: 10px !important; }
+.page-card > * ul { padding-left: 1rem; }
+.page-card > * ul > * p, * li { margin: 0.5rem 0.5rem 1rem 2rem !important; }
