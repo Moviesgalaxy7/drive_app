@@ -7,6 +7,7 @@
         <a class="item" href="<?= PAGES_URL; ?>privacy-policy">Privacy policy</a>
         <a class="item" href="<?= PAGES_URL; ?>terms">Terms & Conditions</a>
         <a class="item" href="<?= PAGES_URL; ?>copyright">Copyright</a>
+        <a class="item" href="<?= PAGES_URL; ?>contact-us">Contact US</a>
       </div>
     </div>
   </div>

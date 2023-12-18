@@ -18,8 +18,7 @@
 		<div class="ui inverted secondary menu ">
 			<a class="item" href="/"><i class="google drive icon xxlarge"></i></a>
 			<div class="right menu large">
-				<a href="/" class="item">Home</a>
-				<a href="about-us" class="item">About us</a>
+				<!-- <a href="/" class="item">Home</a> -->
 				<a class="item"><i class="sign-in icon"></i></a>
 			</div>
 		</div>

@@ -1,0 +1,57 @@
+[18-Dec-2023 12:19:19 UTC] PHP Warning:  Undefined variable $responses in /home/moviesga/public_html/dev/file.php on line 47
+[18-Dec-2023 12:19:19 UTC] PHP Deprecated:  json_decode(): Passing null to parameter #1 ($json) of type string is deprecated in /home/moviesga/public_html/dev/file.php on line 47
+[18-Dec-2023 12:29:43 UTC] PHP Warning:  Undefined variable $conn in /home/moviesga/public_html/dev/db.php on line 22
+[18-Dec-2023 12:29:43 UTC] PHP Fatal error:  Uncaught Error: Call to a member function close() on null in /home/moviesga/public_html/dev/db.php:22
+Stack trace:
+#0 /home/moviesga/public_html/dev/file.php(11): CloseCon()
+#1 {main}
+  thrown in /home/moviesga/public_html/dev/db.php on line 22
+[18-Dec-2023 12:29:49 UTC] PHP Warning:  Undefined variable $conn in /home/moviesga/public_html/dev/db.php on line 22
+[18-Dec-2023 12:29:49 UTC] PHP Fatal error:  Uncaught Error: Call to a member function close() on null in /home/moviesga/public_html/dev/db.php:22
+Stack trace:
+#0 /home/moviesga/public_html/dev/file.php(11): CloseCon()
+#1 {main}
+  thrown in /home/moviesga/public_html/dev/db.php on line 22
+[18-Dec-2023 12:29:49 UTC] PHP Warning:  Undefined variable $conn in /home/moviesga/public_html/dev/db.php on line 22
+[18-Dec-2023 12:29:49 UTC] PHP Fatal error:  Uncaught Error: Call to a member function close() on null in /home/moviesga/public_html/dev/db.php:22
+Stack trace:
+#0 /home/moviesga/public_html/dev/file.php(11): CloseCon()
+#1 {main}
+  thrown in /home/moviesga/public_html/dev/db.php on line 22
+[18-Dec-2023 12:29:50 UTC] PHP Warning:  Undefined variable $conn in /home/moviesga/public_html/dev/db.php on line 22
+[18-Dec-2023 12:29:50 UTC] PHP Fatal error:  Uncaught Error: Call to a member function close() on null in /home/moviesga/public_html/dev/db.php:22
+Stack trace:
+#0 /home/moviesga/public_html/dev/file.php(11): CloseCon()
+#1 {main}
+  thrown in /home/moviesga/public_html/dev/db.php on line 22
+[18-Dec-2023 12:30:10 UTC] PHP Warning:  Undefined variable $conn in /home/moviesga/public_html/dev/db.php on line 22
+[18-Dec-2023 12:30:10 UTC] PHP Fatal error:  Uncaught Error: Call to a member function close() on null in /home/moviesga/public_html/dev/db.php:22
+Stack trace:
+#0 /home/moviesga/public_html/dev/file.php(11): CloseCon()
+#1 {main}
+  thrown in /home/moviesga/public_html/dev/db.php on line 22
+[18-Dec-2023 12:34:13 UTC] PHP Warning:  Undefined variable $conn in /home/moviesga/public_html/dev/db.php on line 23
+[18-Dec-2023 12:34:13 UTC] PHP Fatal error:  Uncaught Error: Call to a member function close() on null in /home/moviesga/public_html/dev/db.php:23
+Stack trace:
+#0 /home/moviesga/public_html/dev/file.php(11): CloseCon()
+#1 {main}
+  thrown in /home/moviesga/public_html/dev/db.php on line 23
+[18-Dec-2023 12:34:15 UTC] PHP Warning:  Undefined variable $conn in /home/moviesga/public_html/dev/db.php on line 23
+[18-Dec-2023 12:34:15 UTC] PHP Fatal error:  Uncaught Error: Call to a member function close() on null in /home/moviesga/public_html/dev/db.php:23
+Stack trace:
+#0 /home/moviesga/public_html/dev/file.php(11): CloseCon()
+#1 {main}
+  thrown in /home/moviesga/public_html/dev/db.php on line 23
+[18-Dec-2023 12:34:40 UTC] PHP Warning:  Undefined variable $con in /home/moviesga/public_html/dev/db.php on line 23
+[18-Dec-2023 12:34:40 UTC] PHP Fatal error:  Uncaught Error: Call to a member function close() on null in /home/moviesga/public_html/dev/db.php:23
+Stack trace:
+#0 /home/moviesga/public_html/dev/file.php(11): CloseCon()
+#1 {main}
+  thrown in /home/moviesga/public_html/dev/db.php on line 23
+[18-Dec-2023 12:34:41 UTC] PHP Warning:  Undefined variable $con in /home/moviesga/public_html/dev/db.php on line 23
+[18-Dec-2023 12:34:41 UTC] PHP Fatal error:  Uncaught Error: Call to a member function close() on null in /home/moviesga/public_html/dev/db.php:23
+Stack trace:
+#0 /home/moviesga/public_html/dev/file.php(11): CloseCon()
+#1 {main}
+  thrown in /home/moviesga/public_html/dev/db.php on line 23
+[18-Dec-2023 12:34:55 UTC] PHP Warning:  Undefined variable $j in /home/moviesga/public_html/dev/db.php on line 22

@@ -1,10 +1,8 @@
 <?php
 
-// define('FOOTER_CONTENT', 'Hello I\'m an awesome footer!');
-
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
 
 
 /*
@@ -16,27 +14,23 @@ function clone_file($id,$token)
 	// Init curl
 	$ch = curl_init();
 
-	// Init values
+	// SET URL
 	$URL = "https://www.googleapis.com/drive/v3/files/" . $id . "/copy?access_token=" . $token;
 
-	// set token into json
-	$data = json_encode($token);                                                                                                                                                                 
+	// encode Token Data in Json Format
+	$tokenData = json_encode($token);                                                                                                     
 
-	// SET CURL URL AND VALUE
-	curl_setopt($ch, CURLOPT_URL, $URL);
-
-	// ENABLE RETURN TRANSFER
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-	
-	// SET METHOD POST
-	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");                                                                     
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+	// Set CURL Data  
+	curl_setopt($ch, CURLOPT_URL, $URL);                                                                              
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");                                                                     
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $tokenData);                                                                  
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);                                                                      
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(                                                                          
         'Content-Type: application/json',                                                                                
-        'Content-Length: ' . strlen($data))                                                                       
-    ); 
+        'Content-Length: ' . strlen($tokenData))                                                                       
+    );                                                                                                                   
 
-	// RECIVED CURL EXECUTION DATA
+    // RECIVED CURL EXECUTION DATA
 	$result = curl_exec($ch);
 
 
@@ -48,40 +42,48 @@ function clone_file($id,$token)
 	curl_close($ch);
 
 	// convert into array
-	$data = (array) $result;
-
-	return $data[0];
+	$data = json_decode($result, true);
+	
+	return $data;
 }
 
 function get_access_token()
 {
+	$ref_token = getrefCode($con);
+
+	// Set Paramters for get new Access token
+	$arg = [
+	  'client_id' => CLIENT_ID,
+	  'client_secret' => CLIENT_SECRET,
+	  'refresh_token' => $ref_token,
+	  'grant_type' => 'refresh_token',
+	  'access_type' => 'offline',
+	  'response_type' => 'code'
+	];
+
 	// Init curl
 	$ch = curl_init();
 
-	// Init values
-	$URL = "https://accounts.google.com/o/oauth2/auth?client_id=1054573111976-djj127ntcidmla6g8rsefg0or65uciv6.apps.googleusercontent.com&redirect_uri=http://localhost/google-drive-dev/download.php&response_type=code&scope=https://www.googleapis.com/auth/drive&access_type=offline";
-
-	// SET CURL URL AND VALUE
-	curl_setopt($ch, CURLOPT_URL, $URL);
-
-	// ENABLE RETURN TRANSFER
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-	
-	// SET METHOD POST
-	curl_setopt($ch, CURLOPT_POST, 1);
+	// Set CURL Data  
+	curl_setopt($ch, CURLOPT_URL, CLIENT_ACCESS_TOKEN_URL);
+	curl_setopt($ch, CURLOPT_POST, true);
+	curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($arg));
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
 	// RECIVED CURL EXECUTION DATA
-	$result = curl_exec($ch);
+	$data = curl_exec($ch);
 
+	// IF CURL got error it show here
 	if (curl_errno($ch)) {
-		echo 'Error:' . curl_error($ch);
+	  echo 'Error:' . curl_error($ch);
+	  exit();
 	}
 
 	// CLOSE CURL CALL
 	curl_close($ch);
 
 	// convert into array
-	$data = (array) $result;
+	$data = json_decode($data, true);
 
 	return $data[0];
 }
